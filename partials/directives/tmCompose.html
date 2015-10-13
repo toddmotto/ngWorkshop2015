@@ -14,6 +14,24 @@
         placeholder="Enter recipient"
         ng-model="vm.form.to"
         required>
+      <!--
+
+        form scope: myForm <form name=myForm>
+        child elements of the <form> keep adding the name attributes
+
+        form -> myForm
+                name=to (myForm.to)
+
+        Use the $error Object with form fields, pass it into ngMessages
+
+        <pre>{{ myForm.to.$error | json }}</pre>
+
+        myForm.to.$error = {
+          required: true,
+          email: false
+        };
+
+      -->
       <div
         ng-show="myForm.to.$touched"
         ng-messages="myForm.to.$error">
