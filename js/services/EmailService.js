@@ -14,14 +14,24 @@
  */
 function EmailService($http, API) {
 
-  function getEmail() {
-
+  function getEmail(id) {
+    return (
+      $http
+        // API.email = '../api/emails/{{id}}.json'
+        .get(API.email.replace(/{{id}}/, id))
+        .then(function (response) {
+          return response.data;
+        }, function (reason) {
+          // handle errors
+        })
+    );
   }
 
   function getEmails() {
     return (
       $http
-        .get(API.inbox) // '../api/inbox.json'
+        // API.inbox = '../api/inbox.json'
+        .get(API.inbox)
         .then(function (response) {
           // return data property
           return response.data;

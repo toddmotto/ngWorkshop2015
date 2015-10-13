@@ -15,6 +15,8 @@ function tmComposeDirCtrl($rootScope) {
 
   var vm = this;
 
+  var showCompose = false;
+
   var form = {
     to: '',
     subject: '',
@@ -24,6 +26,12 @@ function tmComposeDirCtrl($rootScope) {
 
   // exports
   vm.form = form;
+  vm.showCompose = showCompose;
+
+  // events
+  $rootScope.$on('newEmail', function () {
+    vm.showCompose = true;
+  });
 
 }
 

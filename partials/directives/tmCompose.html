@@ -1,7 +1,7 @@
-<div class="tm-compose" style="display: none;">
+<div class="tm-compose" ng-show="vm.showCompose">
   <h1 class="tm-compose-title">
     New email
-    <div class="tm-compose-close">
+    <div class="tm-compose-close" ng-click="vm.showCompose = false;">
       <i class="fa fa-times-circle"></i>
     </div>
   </h1>
@@ -10,24 +10,43 @@
       To:
       <input
         type="email"
+        name="to"
         placeholder="Enter recipient"
         ng-model="vm.form.to"
         required>
+      <div
+        ng-show="myForm.to.$touched"
+        ng-messages="myForm.to.$error">
+        <div ng-message="required">Enter an email address</div>
+        <div ng-message="email">Enter a valid email address</div>
+      </div>
     </label>
     <label>
       Subject:
       <input
         type="text"
+        name="subject"
         placeholder="Enter subject"
         ng-model="vm.form.subject"
         required>
+      <div
+        ng-show="myForm.subject.$touched"
+        ng-messages="myForm.subject.$error">
+        <div ng-message="required">Please enter a subject</div>
+      </div>
     </label>
     <label>
       Message:
       <textarea
+        name="message"
         placeholder="Enter your message..."
         ng-model="vm.form.message"
         required></textarea>
+      <div
+        ng-show="myForm.message.$touched"
+        ng-messages="myForm.message.$error">
+        <div ng-message="required">Please enter a message</div>
+      </div>
     </label>
     <button type="submit" class="button">
       <i class="fa fa-paper-plane-o"></i>

@@ -37,7 +37,27 @@ function InboxCtrl($rootScope, $state, messages) {
    *
    */
 
+  function getUnreadCount() {
+    return vm.messages.filter(function (value) {
+      return !value.read;
+    }).length;
+  }
+
+  function trashMessages() {
+    vm.messages = vm.messages.filter(function (value, index) {
+      return !value.checked;
+    });
+    // update the unread count again
+    $rootScope.$emit('count:render', getUnreadCount());
+  }
+
+   // exports
    vm.messages = messages;
+   vm.trashMessages = trashMessages;
+   vm.getUnreadCount = getUnreadCount;
+
+   // events
+   $rootScope.$emit('count:render', getUnreadCount());
 
 }
 
