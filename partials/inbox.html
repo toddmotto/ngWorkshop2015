@@ -70,7 +70,7 @@
 
     <div class="inbox__messages">
       <ul>
-        <li>
+        <li ng-repeat="message in vm.messages">
           <tm-email model="message"></tm-email>
         </li>
       </ul>

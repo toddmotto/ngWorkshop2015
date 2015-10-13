@@ -1,4 +1,10 @@
 <!doctype html>
+<!--
+  Step 2: ng-app attribute tells Angular where to instantiate the application
+  - Pass in the module name
+  - Everything inside ng-app is available for Angular to bind to
+  - Alternatively drop ng-app and use angular.bootstrap(); to instantiate
+-->
 <html ng-app="tm.workshop">
   <head>
     <meta charset="utf-8">
@@ -90,11 +96,28 @@
 
     <tm-compose></tm-compose>
 
+    <!--
+      Step : 1
+      Angular.js:
+        - code.angularjs.org
+        - Include Angular.js core at the top of all Angular dependencies
+        - Angular-1.4.7.js - Main Angular
+        - angular-messages-1.4.7.js - ngMessages module
+        - ui-router: Third-party, routing module (nested views/state based routing)
+    -->
     <script src="js/vendor/angular-1.4.7.js"></script>
     <script src="js/vendor/angular-messages-1.4.7.js"></script>
     <script src="js/vendor/ui-router-0.2.15.js"></script>
 
+    <!--
+      App.js: Main module declaration
+        - Needs to be the first Angular first for our app (besides/after the core)
+    -->
     <script src="js/app.js"></script>
+
+    <!--
+      Everything else: No specific order
+    -->
     <script src="js/router.js"></script>
     <script src="js/constants.js"></script>
     <script src="js/controllers/InboxCtrl.js"></script>
