@@ -1,0 +1,18 @@
+<div class="message cf">
+  <div class="message__side">
+    <input
+      type="checkbox"
+      ng-model="vm.model.checked"
+      ng-init="vm.model.checked = false;">
+  </div>
+  <div
+    class="message__content"
+    ng-click="vm.onClick(vm.model);">
+    <p class="message-sender">
+      <span ng-bind="vm.model.from"></span>
+      <span class="message-date" ng-bind="vm.model.date | date:'dd MMM'"></span>
+    </p>
+    <h1 class="message-title" ng-bind="vm.model.subject"></h1>
+    <p class="message-intro" ng-bind="vm.model.preview"></p>
+  </div>
+</div>

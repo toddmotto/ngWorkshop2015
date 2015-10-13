@@ -1,0 +1,73 @@
+<!-- header -->
+<header class="header mail__header">
+  <h1 class="header-title">
+    {{ vm.message.from }}
+  </h1>
+</header>
+<!-- /header -->
+
+<!-- content -->
+<div class="content">
+
+  <!-- action -->
+  <div class="action cf">
+    <ul>
+      <li>
+        <a href="">
+          <i class="fa fa-refresh"></i>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-archive"></i>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-exclamation-circle"></i>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-trash"></i>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="">
+          <i class="fa fa-reply"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- /action -->
+
+  <!-- selected message -->
+  <div class="view">
+
+    <div class="view__info cf">
+      <img src="../img/unnamed.png" width="60" height="60" alt="">
+      <h2 ng-bind="vm.message.subject"></h2>
+      <a href="" ng-bind="vm.message.email"></a>
+      <span ng-bind="vm.message.date | date: 'dd MMMM, yyyy HH:mm a'"></span>
+    </div>
+
+    <div class="view__text">
+      <p ng-bind="vm.message.content"></p>
+    </div>
+
+    <div class="view__reply">
+      <form>
+        <textarea placeholder="Write a quick reply"></textarea>
+        <button class="button">
+          <i class="fa fa-paper-plane-o"></i>Send email
+        </button>
+      </form>
+    </div>
+
+  </div>
+  <!-- /selected message -->
+
+</div>
+<!-- /content -->

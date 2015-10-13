@@ -1,0 +1,89 @@
+<!-- inbox -->
+<div class="inbox">
+
+  <!-- header -->
+  <header class="header inbox__header">
+    <h1 class="header-title">
+      {{ page.breadcrumb }}
+    </h1>
+
+    <form class="inbox__search">
+      <input type="text" placeholder="Search" ng-model="localSearch">
+      <input type="submit" value="&#xf002;">
+    </form>
+  </header>
+  <!-- /header -->
+
+  <!-- content -->
+  <div class="content">
+
+    <!-- inbox action -->
+    <div class="action cf">
+      <ul>
+        <li>
+          <input
+            type="checkbox"
+            ng-model="toggleCheckbox">
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-refresh"></i>
+          </a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="">
+            <i class="fa fa-archive"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-exclamation-circle"></i>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <i class="fa fa-trash"></i>
+          </a>
+        </li>
+      </ul>
+
+      <div class="pagination">
+        <span>0 of 121</span>
+        <ul>
+          <li>
+            <a href="">
+              <i class="fa fa-chevron-left"></i>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa fa-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- /inbox action -->
+
+    <div class="inbox__messages">
+      <ul>
+        <li>
+          <tm-email model="message"></tm-email>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <!-- /content -->
+
+</div>
+<!-- /inbox -->
+
+<!-- mail -->
+<div class="mail">
+  <div ui-view="email"></div>
+</div>
+<!-- /mail -->

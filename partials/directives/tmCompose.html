@@ -1,0 +1,37 @@
+<div class="tm-compose" style="display: none;">
+  <h1 class="tm-compose-title">
+    New email
+    <div class="tm-compose-close">
+      <i class="fa fa-times-circle"></i>
+    </div>
+  </h1>
+  <form name="myForm" ng-submit="vm.onSubmit(vm.form);" novalidate>
+    <label>
+      To:
+      <input
+        type="email"
+        placeholder="Enter recipient"
+        ng-model="vm.form.to"
+        required>
+    </label>
+    <label>
+      Subject:
+      <input
+        type="text"
+        placeholder="Enter subject"
+        ng-model="vm.form.subject"
+        required>
+    </label>
+    <label>
+      Message:
+      <textarea
+        placeholder="Enter your message..."
+        ng-model="vm.message"
+        required></textarea>
+    </label>
+    <button type="submit" class="button">
+      <i class="fa fa-paper-plane-o"></i>
+      Send
+    </button>
+  </form>
+</div>
